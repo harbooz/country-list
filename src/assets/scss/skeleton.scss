@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  background: #1E1E1E;
+  }
+  
+  .app__content {
+  display: flex;
+  max-width: 1440px;
+  height: 1024px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+
+  @include mq($tabletScreen) {
+    flex-direction: column;
+     max-width: 100%;
+     height: 100%;flex-direction: column;
+     max-width: 100%;
+     height: 100%;
+     position: fixed;
+     width: 100%;
+     overflow-y: auto;
+     -webkit-overflow-scrolling: touch;
+     left: 0;
+     right: 0;
+     top: 0;
+  }
+
+  &:after {
+    content: "";
+    background: #D4D9DE url("../images/bg.png") no-repeat bottom right;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mq($tabletScreen) {
+        background: #D4D9DE;
+     }  
+  }
+
+  }
+  
+  
+  .content__details {
+  width: 1210px;
+  margin-right: 70px;   
+
+  @include mq($tabletScreen) {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 16px;
+    }  
+
+  @include mq($mobile) {
+    width: 100%;
+    }  
+
+  }
+  
+  .header__title {
+  margin: 0;
+  padding-top: 46px;
+  font-size: 20px;
+  font-weight: 700;
+  padding-left: 136px;
+  letter-spacing: -0.6px;
+  line-height: 32px;
+
+    @include mq($tabletScreen) {
+        padding-left: 0;
+        padding-top: 36px;
+    }  
+  }
+  
+  header {
+  height: 92px;
+  width: 100%;
+  position: relative;
+
+    @include mq($mobile) {
+      height: auto;
+      }  
+  }
+  
+  .logo {
+  background: url("../images/virta.svg");
+  height: 80px;
+  width: 112px;
+  background-size: 100%;
+  margin: 24px;
+
+  @include mq($tabletScreen) {
+    margin: 0;
+   } 
+}
+  
+  .time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 54px;
+  color: #222222;
+  font-weight: 700;
+
+  @include mq($tabletScreen) {
+    font-size: 16px;
+    right: 32px;
+    position: fixed;
+    top: 40px;
+    bottom: unset;
+    }  
+
+  }
+  
+  .country__section {
+  margin-left: 136px;
+  margin-top: 112px;
+    @include mq($tabletScreen) {
+        margin-left: 0;
+        margin-top: -20px;
+    }  
+  }
+  
+  .country__title {
+  font-size: 54px;
+  color: #222222;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.6px;
+  line-height: 64.8px;
+    @include mq($mobile) {  
+       display: none;
+        }  
+  }
+  
+  .country__table {
+  margin-top: 50px;
+  }
+  
+  .country__items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 608px;
+    height: 350px;
+    overflow-y: auto;
+
+    @include mq($mobile) {
+        width: 100%;
+        height: calc(100% - 200px);
+        position: absolute;
+        left: 0;
+        padding: 0 16px;
+      }  
+  }
+  
+  .country__items li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    background: #FFF;
+    padding-right: 56px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    overflow: hidden;
+    position: relative;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+    @include mq($mobile) {
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 8px 56px 8px 16px;
+        height: auto;
+        }  
+  }
+  
+  .bar {
+    width: 8px;
+    height: 48px;
+    border-radius: 5px;
+    background: #00AD09;
+    margin-right: 13.5px;
+    margin-left: -4px;
+
+    @include mq($mobile) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+  }
+
+  .country__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .row__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #5F5F5F;
+
+    @include mq($mobile) {
+     flex-direction: column;
+     align-items: flex-start;
+  } 
+
+  }
+
+  .row__group {
+    display: flex;
+    flex-direction: column;
+   span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    &:first-child{
+      font-size: 16px;
+      color: #222222;
+    }
+   
+  
+   }
+  }
+
+  .country__code {   
+    font-family: 'IBM Plex Mono', monospace;
+   
+    span{
+      margin-left: 5px;
+    }
+  }
+
+
+  .flag__icon {
+    svg, img {
+      width: 24px;
+    }
+  }
+
+  .valid {
+    width: 24px;
+    height: 24px;
+    background: #00AD09;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 8px;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      border-color: #FFF;
+      border-style: solid;
+      top: 6px;
+      left: 9px;
+    }
+  }
+  
+  .not__valid {
+    display: none;
+    width: 24px;
+    height: 24px;
+    background: #FF0000;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    &:after {
+      content: "";
+      height: 12px;
+      border-left: 2px solid #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      left: 11px;
+      top: 6px;
+    }
+    &:before {
+      content: "";
+      height: 12px;
+      border-left: 2px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 11px;
+      top: 6px;
+    }
+  }
+
+  .not--valid {
+    .bar{
+      background: #FF0000;
+    }
+    .not__valid {
+      display: block;
+    }
+  }
+  
+
+
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #d0d1d1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #b0b3b7;
+  }
