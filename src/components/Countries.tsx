@@ -46,12 +46,7 @@ export default function CountriesComponent(): React.ReactElement {
                   Country code:<span>({iso3})</span>
                 </div>
               </div>
-
-              {otpInAppEnabled ? (
-                <div className="valid"></div>
-              ) : (
-                <div className="not__valid"></div>
-              )}
+              <div className={otpInAppEnabled ? "valid" : "not__valid"}></div>
             </div>
           </li>
         )
